@@ -1,50 +1,54 @@
-# ritikmahajan.dev — Independent Creative Studio
+# ritikmahajan.dev
 
-A responsive, static-first personal studio website built with semantic HTML, CSS and vanilla JavaScript.
+A staged personal portfolio for a full-stack AI engineer and product builder.
 
-## Project structure
+## Current implementation: Phase 1
 
-```text
-.
-├── index.html
-├── _headers
-├── favicon.svg
-├── robots.txt
-├── sitemap.xml
-└── src/
-    ├── main.js
-    └── styles.css
-```
+The current release intentionally contains only the homepage first screen. It establishes the **Independent Product Workshop** visual direction: warm paper surfaces, editorial display typography, ink-like text, restrained green/rust/gold accents, and an original geometric workbench illustration.
+
+The first screen is responsive, uses semantic HTML, supports keyboard focus and reduced-motion preferences, and avoids placeholder project content or unsupported claims.
+
+## Stack
+
+- React + TypeScript
+- Vite
+- Modern CSS
+- No backend or CMS
 
 ## Run locally
 
-No build tooling is required. Open `index.html` in a browser, or run:
-
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then visit http://localhost:8000.
+Create a production build with:
 
-## Deploy to Cloudflare Pages
+```bash
+npm run build
+npm run preview
+```
 
-1. Connect this repository in **Workers & Pages → Create → Pages → Connect to Git**.
-2. Select this repository and set the framework preset to **None**.
-3. Leave the build command empty.
-4. Set the build output directory to `/` (the repository root).
-5. Deploy, then add `ritikmahajan.dev` under **Custom domains**.
-6. Follow Cloudflare's DNS instructions and verify HTTPS.
+## Cloudflare Pages
 
-This is a static site; no build-time environment variables or server secrets are required.
+- Framework preset: **Vite**
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Production branch: `main`
 
-## Before launch
+Connect the Git repository in Cloudflare Pages when ready. The repository has not been deployed as part of this implementation.
 
-- [ ] Replace illustrative work previews with real case studies.
-- [ ] Confirm that `hello@ritikmahajan.dev` is active and monitored.
-- [ ] Add social profile links when available.
-- [ ] Review biography, copy and service descriptions for accuracy.
-- [ ] Test mobile navigation and links on real devices.
-- [ ] Add a social preview image if desired.
-- [ ] Connect the custom domain and verify HTTPS.
+## Future project-page architecture
 
-The visual system uses warm paper tones, deep ink, muted green and terracotta accents, editorial typography, original inline vector artwork, and restrained motion. Reduced-motion preferences and keyboard focus states are supported.
+As product details are supplied, project content should live separately from its page presentation. The planned shape is:
+
+- A typed project content record for title, slug, status, summary, confirmed details, contribution, technical decisions, media, and approved external links.
+- A reusable project-detail layout that can present each project without forcing identical visual treatments.
+- One route per project, for example `/work/open-pane`, `/work/interview-pilot-ai`, and `/work/agentops-mcp`.
+- Work-in-progress projects must retain an explicit status and must not be described as shipped products.
+
+These routes, content records, and detailed showcases are intentionally **not implemented in Phase 1**. They will be added when the actual product information is available and after the first-screen review gate is approved.
+
+## Design decisions
+
+See [docs/creative-direction.md](docs/creative-direction.md) for the approved visual identity, desktop/mobile composition, rationale, constraints, and unresolved content questions.
