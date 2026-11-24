@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function WorkshopStudy() {
   return (
     <div className="study" role="img" aria-label="An original geometric workbench study with layered shapes, construction lines and annotations">
@@ -48,18 +46,6 @@ function WorkshopStudy() {
 }
 
 export default function App() {
-  const [copied, setCopied] = useState(false);
-
-  async function copyEmail() {
-    try {
-      await navigator.clipboard.writeText("hello@ritikmahajan.dev");
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 1800);
-    } catch {
-      window.location.href = "mailto:hello@ritikmahajan.dev";
-    }
-  }
-
   return (
     <>
       <header className="site-header">
