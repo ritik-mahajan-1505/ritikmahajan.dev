@@ -39,7 +39,7 @@ function WorkshopStudy() {
 }
 
 export default function App() {
-  const projectMatch = window.location.pathname.match(/^\\/work\\/([^/]+)\\/?$/);
+  const projectMatch = window.location.pathname.match(/^\/work\/([^/]+)\/?$/);
   if (projectMatch) {
     const project = getProjectBySlug(decodeURIComponent(projectMatch[1]));
     if (project) return <ProjectPage project={project} />;
