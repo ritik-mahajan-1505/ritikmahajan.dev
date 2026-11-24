@@ -1,4 +1,5 @@
-import { projects } from "./content/projects";
+import { getProjectBySlug, projects } from "./content/projects";
+import { ProjectPage } from "./pages/ProjectPage";
 
 function WorkshopStudy() {
   return (
@@ -38,6 +39,12 @@ function WorkshopStudy() {
 }
 
 export default function App() {
+  const projectMatch = window.location.pathname.match(/^\\/work\\/([^/]+)\\/?$/);
+  if (projectMatch) {
+    const project = getProjectBySlug(decodeURIComponent(projectMatch[1]));
+    if (project) return <ProjectPage project={project} />;
+    return <main className="not-found"><p className="section-kicker">404 / NOT IN THE WORKSHOP</p><h1>This page is still<br/><em>off the drawing board.</em></h1><a className="button button-dark" href="/#work">Back to selected work <span aria-hidden="true">↗</span></a></main>;
+  }
   return (
     <>
       <header className="site-header">
@@ -95,21 +102,21 @@ export default function App() {
           <div className="section-main">
             <div className="section-heading-row">
               <div><p className="section-kicker">A FEW THINGS I’VE BEEN MAKING</p><h2 id="work-title">Built to be <em>used.</em></h2></div>
-              <p className="section-aside">A growing collection of products and explorations. More detail will be added as each project is documented.</p>
+              <p className="section-aside">A growing collection of products and explorations. Open a project for its current working draft.</p>
             </div>
             <div className="project-list">
               {projects.map((project, index) => (
-                <article className="project-row" key={project.slug}>
+                <a className="project-row project-row-link" href={`/work/${project.slug}`} key={project.slug} aria-label={`Read the ${project.name} project draft`}>
                   <span className="project-number">0{index + 1}</span>
                   <div className="project-description">
                     <div className="project-title-line"><h3>{project.name}</h3><span className={`project-status ${project.status === "Work in progress" ? "status-wip" : ""}`}>{project.status}</span></div>
                     <p>{project.summary}</p>
                   </div>
-                  <span className="project-kind">{project.kind}</span>
-                </article>
+                  <span className="project-kind">{project.kind}</span><span className="project-open" aria-hidden="true">↗</span>
+                </a>
               ))}
             </div>
-            <p className="work-note">Project pages will take shape as I add verified details, decisions, and supporting material for each product.</p>
+            <p className="work-note">Each page is a clearly marked working draft. Product-specific facts, visuals and implementation details will replace the illustrative copy as they are confirmed.</p>
           </div>
         </section>
 
