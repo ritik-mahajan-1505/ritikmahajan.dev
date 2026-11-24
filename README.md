@@ -4,9 +4,9 @@ A staged personal portfolio for a full-stack AI engineer and product builder.
 
 ## Current implementation: Phase 3
 
-The homepage now includes the approved first-screen composition plus the broader homepage narrative: an approach to product building, a selected-work index, engineering practice, and a GitHub-based closing invitation. It uses the **Independent Product Workshop** visual direction: warm paper surfaces, editorial display typography, ink-like text, restrained green/rust/gold accents, and original geometric artwork.
+The homepage includes the approved first-screen composition plus the broader homepage narrative. Each selected project has a reusable detail route at `/work/<slug>`. It uses the **Independent Product Workshop** visual direction: warm paper surfaces, editorial display typography, ink-like text, restrained green/rust/gold accents, and original geometric artwork.
 
-The page is responsive, uses semantic HTML, includes keyboard skip navigation and visible focus styles, and respects reduced-motion preferences. Project summaries are kept in `src/content/projects.ts`, separate from the page presentation, and contain only confirmed high-level facts. No detailed case studies, empty project routes, placeholder content, or unsupported claims have been added.
+The page is responsive, uses semantic HTML, includes keyboard skip navigation and visible focus styles, and respects reduced-motion preferences. Project content is kept in `src/content/projects.ts`, separate from page presentation. Detail pages use the reusable layout in `src/pages/ProjectPage.tsx`. Long-form copy is explicitly marked as illustrative placeholder text derived only from each supplied project title and short description; it must be reviewed and replaced with verified facts before publication.
 
 ## Stack
 
@@ -40,7 +40,7 @@ Connect the Git repository in Cloudflare Pages when ready. The repository has no
 
 ## Project content model
 
-The current high-level project index is driven by `src/content/projects.ts`. It is intentionally small: name, stable slug, known status, category label, and a factual summary. Detailed case-study fields and routes are deferred until project-specific information is supplied and reviewed.
+The project index and detail pages are driven by `src/content/projects.ts`. Each record includes a name, stable slug, known status, category, supplied summary, provisional positioning, draft narrative sections and details to confirm. All provisional copy is visibly identified and is not represented as verified product behavior.
 
 ## Future project-page architecture
 
