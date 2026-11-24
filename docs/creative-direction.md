@@ -142,3 +142,16 @@ The supplied roadmap does not establish the preferred public title beyond the po
 - No animation library, 3D engine, backend, CMS, or state-management dependency.
 - The only interactive behavior is a small copy-contact affordance if a confirmed address is added later; no contact affordance is shipped in this first-screen build.
 - Cloudflare Pages build target: `npm run build`, output `dist`. Deployment and domain verification remain separate tasks.
+
+
+## Phase 3 homepage narrative implementation
+
+The homepage now extends below the approved first screen with:
+- An approach section describing the confirmed problem-to-product mindset.
+- A selected-work overview populated from a separate typed content file at `src/content/projects.ts`.
+- A concise engineering-practice section grounded in the confirmed full-stack, AI/agent, and infrastructure experience.
+- A closing invitation that links to the confirmed GitHub profile; no unverified email or profile is invented.
+
+The project index uses only supplied names, broad descriptions, and statuses. Dedicated case-study routes and detailed content remain deferred until project documentation is supplied. Personal-curiosity content is omitted until details are provided.
+
+The implementation remains responsive and uses semantic section landmarks, a skip link, keyboard-visible focus, and reduced-motion handling. Production build verification, browser QA, and deployment are intentionally deferred until the code is ready for the combined release review.
