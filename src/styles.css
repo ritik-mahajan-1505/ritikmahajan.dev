@@ -174,3 +174,50 @@ h1 em { color: var(--rust); font-weight: 400; }
   .project-title-line { align-items: flex-start; flex-direction: column; gap: 8px; }
   .site-footer > a:last-child { font-size: 8px; }
 }
+
+
+/* Reusable project pages and explicitly provisional content */
+.project-row-link { position: relative; color: inherit; text-decoration: none; transition: background .2s, padding .2s; }
+.project-row-link:hover { background: rgba(52,75,61,.045); padding-left: 10px; padding-right: 10px; }
+.project-row-link:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+.project-open { align-self: center; color: var(--rust); font-size: 18px; }
+.project-page { width: min(100%, var(--max)); margin: 0 auto; padding: 34px var(--gutter) 0; }
+.back-link { display: inline-block; color: var(--muted); font: 10px var(--mono); letter-spacing: .04em; }
+.back-link:hover { color: var(--rust); }
+.project-page-meta { display: flex; align-items: center; gap: 14px; margin-top: clamp(58px, 9vw, 116px); color: var(--muted); font: 9px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+.draft-status { padding: 6px 9px; border: 1px solid rgba(52,75,61,.35); color: var(--green); }
+.draft-status.status-wip { border-color: rgba(182,94,66,.45); color: var(--rust); }
+.project-page > h1 { margin-top: 22px; font-size: clamp(58px, 10vw, 136px); overflow-wrap: anywhere; }
+.project-title-period { color: var(--rust); }
+.project-lede { max-width: 760px; margin: 26px 0 0; color: #62635b; font: 400 clamp(20px, 2.5vw, 30px)/1.45 var(--display); }
+.draft-banner { display: grid; grid-template-columns: 150px 1fr; gap: 24px; margin: 54px 0 0; padding: 20px 22px; border: 1px solid rgba(182,94,66,.45); background: rgba(182,94,66,.055); }
+.draft-banner-mark { color: var(--rust); font: 9px var(--mono); letter-spacing: .08em; }
+.draft-banner p { max-width: 820px; margin: 0; color: #62635b; font-size: 12px; line-height: 1.8; }
+.project-overview, .confirm-section { display: grid; grid-template-columns: minmax(150px,.32fr) 1fr; gap: clamp(32px,7vw,110px); padding: 86px 0; border-bottom: 1px solid var(--line); }
+.project-overview h2 { max-width: 850px; margin: 0; font: 400 clamp(30px,4.5vw,58px)/1.1 var(--display); letter-spacing: -.03em; }
+.project-story { max-width: 1050px; margin-left: auto; }
+.project-story-row { display: grid; grid-template-columns: 70px 1fr; gap: 24px; padding: 54px 0; border-bottom: 1px solid var(--line); }
+.project-story-number { padding-top: 4px; color: var(--rust); font: 10px var(--mono); }
+.project-story-row h2, .confirm-section h2 { margin: 0; font: 400 clamp(30px,4vw,48px)/1.1 var(--display); letter-spacing: -.03em; }
+.project-story-copy { max-width: 720px; margin: 20px 0 0; color: #62635b; font-size: 14px; line-height: 1.9; }
+.confirm-section { padding-top: 78px; padding-bottom: 90px; }
+.confirm-section h2 em { color: var(--rust); font-weight: 400; }
+.confirm-section ul { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 34px; margin: 30px 0 0; padding: 0; list-style: none; }
+.confirm-section li { position: relative; padding-left: 18px; color: #62635b; font-size: 12px; line-height: 1.7; }
+.confirm-section li::before { position: absolute; left: 0; color: var(--rust); content: "—"; }
+.project-page-footer { min-height: 88px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); }
+.project-page-footer > a:last-child { color: var(--muted); font: 9px var(--mono); letter-spacing: .07em; }
+.project-page-footer > a:last-child:hover { color: var(--rust); }
+@media (max-width: 680px) {
+  .project-page { padding-top: 24px; }
+  .project-page-meta { margin-top: 64px; flex-wrap: wrap; }
+  .project-page > h1 { font-size: clamp(50px, 12vw, 76px); }
+  .draft-banner { grid-template-columns: 1fr; gap: 10px; margin-top: 38px; padding: 16px; }
+  .project-overview, .confirm-section { display: block; padding: 62px 0; }
+  .project-overview .section-index, .confirm-section .section-index { margin-bottom: 28px; }
+  .project-story-row { grid-template-columns: 28px 1fr; gap: 12px; padding: 38px 0; }
+  .project-story-copy { font-size: 13px; }
+  .confirm-section ul { grid-template-columns: 1fr; gap: 10px; }
+  .project-page-footer { min-height: 76px; }
+  .project-page-footer > a:last-child { font-size: 8px; }
+}
