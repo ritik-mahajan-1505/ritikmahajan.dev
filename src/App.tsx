@@ -40,7 +40,6 @@ function WorkshopStudy() {
 export default function App() {
   return (
     <>
-      <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Ritik Mahajan home">rm<span>.</span></a>
         <div className="header-note">INDEPENDENT PRODUCT WORKSHOP <i aria-hidden="true">/</i> 2026</div>
